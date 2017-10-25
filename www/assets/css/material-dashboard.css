@@ -12308,10 +12308,16 @@ footer .btn {
   color: #000;
   position:fixed;
   bottom:0px;
-
 }
 
-.gallery-footer a {
+.timeline-footer {
+  color: #000;
+  position:fixed;
+  bottom: -10px;
+  z-index: 2 !important;
+}
+
+.gallery-footer a, .timeline-footer a {
   background-color: #fff;
   color: #000;
 }
@@ -12325,7 +12331,7 @@ footer .btn {
 }
 
 .main-content-undo {
-    margin-top: 0px !important;
+    margin-top: 10px !important;
     padding: 30px 15px;
     min-height: calc(100vh - 123px);
 }
@@ -12340,6 +12346,10 @@ footer .btn {
   float: left;
   color: #fff !important;
   background-color: #A3DBC9 !important;
+}
+
+.timeline-badge {
+  z-index: 1 !important;
 }
 
 @media screen and (max-width: 990px) {

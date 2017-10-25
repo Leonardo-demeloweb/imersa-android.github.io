@@ -8,7 +8,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "body {\n    background-image: url(\"/assets/img/login-imersa.png\");\n    \n}\n", ""]);
+exports.push([module.i, "body {\n    background-image: url(\"/assets/img/login-imersa.png\");\n    \n}\n\n.title {\n\tcolor: #fff;\n\tfont-size: 24px;\n\tfloat: left;\n}\n\n\n@media screen and (min-width: 990px) {\n\t.btn-undo {\n\t  margin-right: 20px;\n\t}\n}\n", ""]);
 
 // exports
 
@@ -21,7 +21,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/timeline/timeline.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\n  <div class=\"container-fluid\">\n    <!--<div class=\"header text-center\">\n      <h3 class=\"title\">Timeline</h3>\n    </div>-->\n\n\n    <div class=\"row\" *ngIf=\"iAdmin()\" >\n      <div class=\"col-md-offset-11 col-md-1 col-xs-offset-9 col-xs-1\">\n        <button class=\"btn btn-round btn-just-icon btn-undo\" data-placement=\"left\" (click)=\"navegarTabelaMemorias()\">\n         <i class=\"material-icons\">undo</i>\n       </button>\n     </div>\n   </div>\n\n   <div class=\"row\">\n    <div class=\"col-md-12\">\n      <div class=\"card card-plain\">\n        <div class=\"card-content\">\n          <ul class=\"timeline\">\n\n            <li *ngFor=\"let m of momentos; let i = index\" [class]=\"getLiClass(i)\">\n              <div class=\"timeline-badge btn-imersa\">\n                <i class=\"material-icons\">timeline</i>\n              </div>\n              <div class=\"timeline-panel\">\n                <div class=\"timeline-heading\">\n                  <a (click)=\"goToResumoGallery(m)\">\n                    <img class=\"img\" [src]=\"getUrlFotoMomento(m)\" >\n                  </a>\n                </div>\n                <div class=\"timeline-body\">\n                  <h5>{{momentos[i].titulo}}</h5>\n                </div>\n                <h6>\n                  <i class=\"ti-time\"></i> {{momentos[i].data | date:'dd-MM-y'}}\n                </h6>\n              </div>\n            </li>\n\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n</div>\n"
+module.exports = "<div class=\"main-content\">\n  <div class=\"container-fluid\">\n\n\n    <div class=\"row\" *ngIf=\"iAdmin()\" >\n      <div class=\"col-md-12 col-xs-10\">\n        <div class=\"title\">Minhas Narrativas</div>\n        <button class=\"btn btn-round btn-just-icon btn-undo pull-right\" data-placement=\"left\" (click)=\"navegarTabelaMemorias()\">\n         <i class=\"material-icons\">undo</i>\n       </button>\n     </div>\n   </div>\n\n   <div class=\"row\">\n    <div class=\"col-md-12\">\n      <div class=\"card card-plain\">\n        <div class=\"card-content\">\n          <ul class=\"timeline\">\n\n            <li *ngFor=\"let m of momentos; let i = index\" [class]=\"getLiClass(i)\">\n              <div class=\"timeline-badge btn-imersa\">\n                <i class=\"material-icons\">timeline</i>\n              </div>\n              <div class=\"timeline-panel\">\n                <div class=\"timeline-heading\">\n                  <a (click)=\"goToResumoGallery(m)\">\n                    <img class=\"img\" [src]=\"getUrlFotoMomento(m)\" >\n                  </a>\n                </div>\n                <div class=\"timeline-body\">\n                  <h5>{{momentos[i].titulo}}</h5>\n                </div>\n                <h6>\n                  <i class=\"ti-time\"></i> {{momentos[i].data | date:'dd-MM-y'}}\n                </h6>\n              </div>\n            </li>\n\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n</div>\n\n<div class=\"timeline-footer\">\n  <div class=\"row\">\n    <div class=\"btn-group btn-group-justified\">\n        <a class=\"btn btn-icon-pad\"> <img src=\"assets/img/icon-gallery-footer-imersa.png\" height=\"35px\" />  </a>\n        <a class=\"btn btn-icon-pad\" (click)=\"goToListaDepoimentos()\"> <img src=\"assets/img/icon-gallery-footer-bottle.png\" height=\"35px\" /> </a>\n        <a class=\"btn btn-icon-pad\"> <img src=\"assets/img/icon-gallery-footer-map.png\" height=\"35px\" /> </a>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -87,6 +87,9 @@ var TimelineComponent = (function () {
         localStorage.setItem("currentIdMomentoToResumoGallery", momento.momentoId.toString());
         localStorage.setItem("currentEmailUserEdit", this.userTimeLine.email);
         this.router.navigate(['/app-resumo-galeria']);
+    };
+    TimelineComponent.prototype.goToListaDepoimentos = function () {
+        this.router.navigate(['/app-lista-depoimento']);
     };
     TimelineComponent.prototype.navegarTabelaMemorias = function () {
         this.router.navigate(['/tables/datatables.net']);
