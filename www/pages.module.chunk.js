@@ -152,11 +152,11 @@ var LoginComponent = (function () {
                     localStorage.setItem("currentNome", _this.user.nome);
                     localStorage.setItem("currentSobrenome", _this.user.sobrenome);
                     if (_this.user.isAdmin) {
-                        _this.router.navigate(['/tables/datatables.net'], { queryParams: {} });
+                        _this.router.navigate(['tables/datatables.net'], { queryParams: {} });
                     }
                     else {
                         localStorage.setItem("currentEmailUserEdit", _this.user.email);
-                        _this.router.navigate(['/observador/timeline'], { queryParams: {} });
+                        _this.router.navigate(['observador/timeline'], { queryParams: {} });
                     }
                 }, function (error) { return console.log(error); });
                 _this.model.email = '';
@@ -164,11 +164,11 @@ var LoginComponent = (function () {
                 _this.model.isAdmin = '';
             }, function (error) {
                 console.log(error);
-                alert("Login ou senha inválidos");
+                alert(error);
             });
         }, function (error) {
             console.log(error);
-            alert("Login ou senha inválidos");
+            alert(error);
         });
     };
     LoginComponent = __decorate([
