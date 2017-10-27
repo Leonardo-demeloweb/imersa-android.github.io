@@ -737,14 +737,14 @@ var GaleriaComponent = (function () {
         this.configureThumbsAndLarges();
     };
     GaleriaComponent.prototype.getUrlThumbsVideo = function () {
-        return "../assets/img/thumbnail-video.png";
+        return "assets/img/thumbnail-video.png";
     };
     GaleriaComponent.prototype.getUrlConteudo = function (conteudo) {
         if (conteudo) {
             /*console.log("UrL"+this.hostService.host + this.momentoAtual.urlFoto);*/
             return this.hostService.host + conteudo.url;
         }
-        return "../assets/img/login-imersa.png";
+        return "assets/img/login-imersa.png";
     };
     GaleriaComponent.prototype.goToResumoGallery = function (momento) {
         localStorage.setItem("currentIdMomentoToResumoGallery", this.momentoAtual.momentoId.toString());
@@ -1726,6 +1726,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var HostService = (function () {
     /*	host: string = "http://localhost:8080/imersa_backend-beta/" */
+    /*host: string = "http://192.168.0.3:9000/imersa/";*/
     function HostService() {
         /*host: string = "http://localhost:900S0/"*/
         /*host: string = "http://localhost:9000/imersa/"*/
