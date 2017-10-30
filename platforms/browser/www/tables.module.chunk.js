@@ -64,7 +64,6 @@ var DataTableComponent = (function () {
         this.users = new Array();
         this.table = null;
     }
-    ;
     DataTableComponent.prototype.ngOnInit = function () {
         this.initTable();
     };

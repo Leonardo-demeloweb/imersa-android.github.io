@@ -657,7 +657,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/galeria/galeria.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content-gallery sem-padding\" >\n  <div class=\"container-fluid\">\n    <!--<div class=\"header text-center\">\n      <h3 class=\"title\">Galeria de conteúdo dos momentos</h3>\n    </div>-->\n\n      <div class=\"row\">\n          <div class=\"col-md-offset-11 col-md-1 col-xs-offset-9 col-xs-1\">\n            <button class=\"btn btn-round btn-just-icon btn-undo margin-btn-back\" data-placement=\"left\" (click)=\"goToResumoGallery()\">\n               <i class=\"material-icons icon-back\">undo</i>\n            </button>\n          </div>\n        </div>\n\n    \n    <div class=\"row\">\n      <div class=\"col-md-12\">\n        <div class=\"card back-transp\">\n          <div class=\"card-content sem-padding\">\n            <div id=\"typography\">\n              <div class=\"row\" >\n                <div class=\"gallery\">\n\n                  <div *ngFor=\"let c of conteudos; index as i; first as isFirst; last as isLast\">\n\n                    {{ isLast === true ? configureGalleryAfterConteudosLoaded() : null}}\n\n                    <!-- Início núcleo atômico-vídeo thumbnail-->\n\n                    <div class=\"thumbnail- wow fadeInLeft\" *ngIf=\"c.tipoConteudo==1\">\n                      <img [src]=\"getUrlThumbsVideo(c)\" alt=\"\" />\n                      <div class=\"caption\">\n                        <h3 class=\"wow fadeInUp\">{{c.titulo}}</h3>\n                      </div>\n                    </div>\n\n                    <!-- Término núcleo atômico-vídeo thumbnail-->\n\n                    <!-- Início núcleo atômico-vídeo full + comentários-->\n\n                    <div class=\"large- wow bounceInLeft\" *ngIf=\"c.tipoConteudo==1\">\n                      <vg-player>\n                        <vg-controls>\n                          <vg-play-pause></vg-play-pause>\n                          <vg-time-display></vg-time-display>\n                          <vg-mute></vg-mute>\n                          <vg-volume></vg-volume>\n                          <vg-scrub-bar>\n                            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>\n                            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>\n                          </vg-scrub-bar>\n                          <vg-fullscreen></vg-fullscreen>\n                        </vg-controls>\n                        <video #myVideoRef [src]=\"getUrlConteudo(c)\"\n                        [vgMedia]=\"myVideoRef\">\n                      </video>\n                    </vg-player>\n                    <span class=\"close\">✕</span>\n                    <h3>{{c.titulo}}</h3>\n\n                  </div>\n                  <!-- Término núcleo atômico-vídeo full + comentários-->\n\n\n\n\n                  <!-- Início núcleo atômico-imagem thumbnail-->\n                  <div class=\"thumbnail- wow fadeInDown\" *ngIf=\"c.tipoConteudo==0\">\n                    <img [src]=\"getUrlConteudo(c)\" alt=\"\" />\n                    <div class=\"caption\">\n                      <h3 class=\"wow fadeInUp\">{{c.titulo}}</h3>\n                    </div>\n                  </div>\n\n                  <!-- Término núcleo atômico-imagem thumbnail-->\n\n                  <!-- Início núcleo atômico-imagem full + comentários-->\n\n                  <div class=\"large- wow bounceInDown\" *ngIf=\"c.tipoConteudo==0\">\n                    <img [src]=\"getUrlConteudo(c)\" alt=\"\" />\n                    <span class=\"close\">✕</span>\n                    <h3>{{c.titulo}}</h3>\n                  </div>\n\n                  <!-- Término núcleo atômico-imagem full + comentários-->\n\n                </div>\n\n              </div>\n\n            </div>\n          </div>\n    </div>\n  </div>\n</div>\n</div>\n</div>\n</div>\n"
+module.exports = "<div class=\"main-content-gallery sem-padding\" >\n  <div class=\"container-fluid\">\n    <!--<div class=\"header text-center\">\n      <h3 class=\"title\">Galeria de conteúdo dos momentos</h3>\n    </div>-->\n\n    <div class=\"row\">\n      <div class=\"col-md-offset-11 col-md-1 col-xs-offset-9 col-xs-1\">\n        <button class=\"btn btn-round btn-just-icon btn-undo margin-btn-back\" data-placement=\"left\" (click)=\"goToResumoGallery()\">\n         <i class=\"material-icons icon-back\">undo</i>\n       </button>\n     </div>\n   </div>\n\n   <div class=\"row\">\n    <div class=\"col-md-12\">\n      <div class=\"card back-transp\">\n        <div class=\"card-content sem-padding\">\n          <div id=\"typography\">\n            <div class=\"row\" >\n              <div class=\"gallery\">\n\n                <div *ngFor=\"let c of conteudos; index as i; first as isFirst; last as isLast\">\n\n                  {{ isLast === true ? configureGalleryAfterConteudosLoaded() : null}}\n\n                  <!-- Início núcleo atômico-vídeo thumbnail-->\n\n                  <div class=\"thumbnail- wow fadeInLeft\" *ngIf=\"c.tipoConteudo==1\">\n                    <img [src]=\"getUrlThumbsVideo(c)\" alt=\"\" />\n                    <div class=\"caption\">\n                      <h3 class=\"wow fadeInUp\">{{c.titulo}}</h3>\n                    </div>\n                  </div>\n\n                  <!-- Término núcleo atômico-vídeo thumbnail-->\n\n                  <!-- Início núcleo atômico-vídeo full + comentários-->\n\n                  <div class=\"large- wow bounceInLeft\" *ngIf=\"c.tipoConteudo==1\">\n                    <vg-player>\n                      <vg-controls>\n                        <vg-play-pause [id]=\"i\"  (click)=\"playVideoFlag()\"></vg-play-pause>\n                        <vg-time-display></vg-time-display>\n                        <vg-mute></vg-mute>\n                        <vg-volume></vg-volume>\n                        <vg-scrub-bar>\n                          <vg-scrub-bar-current-time></vg-scrub-bar-current-time>\n                          <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>\n                        </vg-scrub-bar>\n                        <vg-fullscreen></vg-fullscreen>\n                      </vg-controls>\n                      <video #myVideoRef [src]=\"getUrlConteudo(c)\"\n                      [vgMedia]=\"myVideoRef\">\n                    </video>\n                  </vg-player>\n                  <span class=\"close\" (click)=\"stopVideo(i)\">✕</span>\n                  <h3>{{c.titulo}}</h3>\n\n                </div>\n                <!-- Término núcleo atômico-vídeo full + comentários-->\n\n\n\n\n                <!-- Início núcleo atômico-imagem thumbnail-->\n                <div class=\"thumbnail- wow fadeInDown\" *ngIf=\"c.tipoConteudo==0\">\n                  <img [src]=\"getUrlConteudo(c)\" alt=\"\" />\n                  <div class=\"caption\">\n                    <h3 class=\"wow fadeInUp\">{{c.titulo}}</h3>\n                  </div>\n                </div>\n\n                <!-- Término núcleo atômico-imagem thumbnail-->\n\n                <!-- Início núcleo atômico-imagem full + comentários-->\n\n                <div class=\"large- wow bounceInDown\" *ngIf=\"c.tipoConteudo==0\">\n                  <img [src]=\"getUrlConteudo(c)\" alt=\"\" />\n                  <span class=\"close\">X</span>\n                  <h3>{{c.titulo}}</h3>\n                </div>\n\n                <!-- Término núcleo atômico-imagem full + comentários-->\n\n              </div>\n\n            </div>\n\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n</div>\n</div>\n"
 
 /***/ }),
 
@@ -695,6 +695,7 @@ var GaleriaComponent = (function () {
         this.hostService = hostService;
         this.router = router;
         this.conteudosConfigurados = false;
+        this.videoPlayingFlag = false;
     }
     GaleriaComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -733,18 +734,29 @@ var GaleriaComponent = (function () {
             this.conteudosConfigurados = true;
         }
     };
+    GaleriaComponent.prototype.playVideoFlag = function () {
+        this.videoPlayingFlag = true;
+    };
+    GaleriaComponent.prototype.stopVideo = function (id) {
+        if (this.videoPlayingFlag) {
+            document.getElementById(id).click();
+            this.videoPlayingFlag = false;
+        }
+    };
     GaleriaComponent.prototype.ngAfterViewInit = function () {
         this.configureThumbsAndLarges();
+        /*      this.testeVideo1 = document.getElementById('0').click();
+        */
     };
     GaleriaComponent.prototype.getUrlThumbsVideo = function () {
-        return "assets/img/thumbnail-video.png";
+        return "../assets/img/thumbnail-video.png";
     };
     GaleriaComponent.prototype.getUrlConteudo = function (conteudo) {
         if (conteudo) {
             /*console.log("UrL"+this.hostService.host + this.momentoAtual.urlFoto);*/
             return this.hostService.host + conteudo.url;
         }
-        return "assets/img/login-imersa.png";
+        return "../assets/img/login-imersa.png";
     };
     GaleriaComponent.prototype.goToResumoGallery = function (momento) {
         localStorage.setItem("currentIdMomentoToResumoGallery", this.momentoAtual.momentoId.toString());
@@ -1476,13 +1488,13 @@ var ResumoGaleriaComponent = (function () {
         }
     };
     ResumoGaleriaComponent.prototype.getUrlThumbsVideo = function () {
-        return "../assets/img/thumbnail-video.png";
+        return "assets/img/thumbnail-video.png";
     };
     ResumoGaleriaComponent.prototype.getUrlConteudo = function (conteudo) {
         if (conteudo) {
             return this.hostService.host + conteudo.url;
         }
-        return "../assets/img/login-imersa.png";
+        return "assets/img/login-imersa.png";
     };
     ResumoGaleriaComponent.prototype.goToGallery = function () {
         localStorage.setItem("currentIdMomentoToGallery", this.momento.momentoId.toString());
