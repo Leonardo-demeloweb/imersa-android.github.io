@@ -749,14 +749,14 @@ var GaleriaComponent = (function () {
         */
     };
     GaleriaComponent.prototype.getUrlThumbsVideo = function () {
-        return "../assets/img/thumbnail-video.png";
+        return "assets/img/thumbnail-video.png";
     };
     GaleriaComponent.prototype.getUrlConteudo = function (conteudo) {
         if (conteudo) {
             /*console.log("UrL"+this.hostService.host + this.momentoAtual.urlFoto);*/
             return this.hostService.host + conteudo.url;
         }
-        return "../assets/img/login-imersa.png";
+        return "assets/img/login-imersa.png";
     };
     GaleriaComponent.prototype.goToResumoGallery = function (momento) {
         localStorage.setItem("currentIdMomentoToResumoGallery", this.momentoAtual.momentoId.toString());
