@@ -1,4 +1,4 @@
-# PROJETO IMERSA VERSÃO COMPILADA PARA GERAÇÃO .APK
+# Projeto Imersa versão compilada
 
 # Hello World PhoneGap Template [![bitHound Score][bithound-img]][bithound-url]
 
